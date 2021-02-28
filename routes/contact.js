@@ -2,19 +2,19 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-//Connect to our User Model
-let User = require('../models/user');
+//Connect to our contact Model
+let Contact = require('../models/user');
 
-// Get Route for the user list
+// Get Route for the contact list
 router.get('/', (req, res, next) => {
-    User.find((err, UserList) => {
+    Contact.find((err, ContactList) => {
         if(err)
         {
             return console.error(err);
         }
         else 
         {
-            console.log(UserList)
+            console.log(ContactList)
         }
     })
 });

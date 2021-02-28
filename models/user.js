@@ -8,7 +8,7 @@ let userModel = mongoose.Schema({
     display_name: String
 },
 {
-    collection: "user"
+    collection: "contacts"
 });
 
 module.exports = mongoose.model('User', userModel);
