@@ -1,37 +1,27 @@
-//index.js - Dhevan Lau - 301130935 - Due Date: 14 February 2021
+//index.js - Dhevan Lau - 301130935
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+router.get('/', indexController.displayHomePage);
+
+/* GET home page. */
+router.get('/home', indexController.displayHomePage);
 
 /* GET About Me page. */
-router.get('/aboutme', function(req, res, next) {
-  res.render('index', { title: 'About Me'});
-});
+router.get('/aboutme', indexController.displayAboutPage);
 
 /* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects'});
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services'});
-});
+router.get('/services', indexController.displayServicesPage);
 
 /* GET Contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact'});
-});
+router.get('/contact', indexController.displayContactPage);
 
 
 module.exports = router;
