@@ -31,7 +31,7 @@ router.post('/add', (req, res, next) => {
     let newContact = Contact({
         "contact_name" : req.body.contact_name,
         "contact_number" : req.body.contact_number,
-        "email_address" : req.body.contact_email
+        "email_address" : req.body.email_address
     });
 
     Contact.create(newContact, (err, Contact) => {
@@ -41,7 +41,7 @@ router.post('/add', (req, res, next) => {
         }
         else{
             //refresh the contact list
-            res.redirect('/contact-list');
+            res.redirect('/contacts-list');
         }
     })
 });
@@ -72,7 +72,7 @@ router.post('/edit/:id', (req, res, next) => {
         "_id" : id,
         "contact_name" : req.body.contact_name,
         "contact_number" : req.body.contact_number,
-        "email_address" : req.body.contact_email
+        "email_address" : req.body.email_address
     });
 
     Contact.updateOne({_id: id}, updatedContact, (err) => {
@@ -82,7 +82,7 @@ router.post('/edit/:id', (req, res, next) => {
         }
         else{
             //refresh the contact list
-            res.redirect('/contact-list');
+            res.redirect('/contacts-list');
         }
     });
 });
@@ -98,7 +98,7 @@ router.get('/delete/:id', (req, res, next) => {
         }
         else {
             //refresh the contact list
-            res.redirect('/contact-list');
+            res.redirect('/contacts-list');
         }
     })
 });
